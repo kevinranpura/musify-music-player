@@ -93,7 +93,7 @@ async function displayalbums() {
 
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
-            songs = await getsongs(`public/${item.currentTarget.dataset.folder}/`)
+            songs = await getsongs(`/${item.currentTarget.dataset.folder}/`)
             playmusic(songs[0])
         })
     })
@@ -125,7 +125,7 @@ async function displayalbums() {
 
 
 async function main() {
-    songs = await getsongs("public/tunes/")
+    songs = await getsongs("/tunes/")
 
     displayalbums()
 
